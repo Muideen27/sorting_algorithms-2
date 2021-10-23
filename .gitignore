@@ -3,6 +3,8 @@
 
 # exe files after compilation process
 bubble
+select
+quick
 
 # Prerequisites
 *.d
