@@ -1,5 +1,15 @@
 # 0x1B. C - Sorting algorithms & Big O
 
+```
+oooooooooo.  ooooo   .oooooo.         .oooooo.   
+`888'   `Y8b `888'  d8P'  `Y8b       d8P'  `Y8b  
+ 888     888  888  888              888      888 
+ 888oooo888'  888  888              888      888 
+ 888    `88b  888  888     ooooo    888      888 
+ 888    .88P  888  `88.    .88'     `88b    d88' 
+o888bood8P'  o888o  `Y8bood8P'       `Y8bood8P'  
+```
+
 ## Learning Objectives
 
 ### General
