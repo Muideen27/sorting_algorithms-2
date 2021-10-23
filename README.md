@@ -58,8 +58,11 @@ In each line will contain the following big O notation about time complexity
 - Editor: VIM 8.1.2269
 
 - Compiler: gcc 9.3.0
+  - flags: `-Wall -Werror -Wextra -pedantic -std=gnu89`
 
 - Style guidelines: [Betty style](https://github.com/holbertonschool/Betty/wiki)
+
+- Compilation: to compile all the algorithms use `./compile_all.sh` with sudo privileges
 
 ## Autor
 
