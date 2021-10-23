@@ -7,5 +7,13 @@
  */
 void quick_sort(int *array, size_t size)
 {
+	unsigned long int pivot;
+
+	srand(getpid());
+	pivot = rand();
+
+	printf("%ld\n", pivot);
+
+	return;
 
 }
