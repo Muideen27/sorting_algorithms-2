@@ -1,6 +1,9 @@
 # sorting algorithms main
 *main.c
 
+# exe files after compilation process
+bubble
+
 # Prerequisites
 *.d
 
