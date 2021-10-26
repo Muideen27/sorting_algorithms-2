@@ -9,8 +9,8 @@ void bubble_sort(int *array, size_t size)
 	unsigned long int i = 0, j = 0;
 	long int swap = 0;
 
-	if (size < 2) /*if array is less than 2 not need to be sorted*/
-	return;
+	if (array == NULL || size < 2) /*if array is less than 2 not need to be sorted*/
+		return;
 
 	for (i = size; i > 0; i--)
 	{
