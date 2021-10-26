@@ -1,4 +1,5 @@
 #include "sort.h"
+void swap(int *a, int *b);
 /**
  * bubble_sort - sort an array of integer in ascending order
  * @array: the array to order and print
@@ -6,23 +7,31 @@
  */
 void bubble_sort(int *array, size_t size)
 {
-	unsigned long int i = 0, j = 0;
-	long int swap = 0;
+	unsigned int i = 0, j = 0;
 
-	if (array == NULL || size < 2 || !size) /*if array is less than 2 not need to be sorted*/
+	if (size <= 1)
 		return;
 
-	for (i = 0; i < size - 1; i++)
-	{
-		for (j = 0; j < size - 1; j++)
-		{
-			if (*(array + j) > *(array + j + 1))
+	for (i = 0; i < (size - 1); i++)
+		for (j = 1; j < size; j++)
+			if (array[j - 1] > array[j])
 			{
-				swap = *(array + j);
-				*(array + j) = *(array + j + 1);
-				*(array + j + 1) = swap;
+				swap(&array[j - 1], &array[j]);
 				print_array(array, size);
 			}
-		}
-	}
+}
+
+/**
+ * _swap - swap two pointers to integer
+ *
+ * @a: first int pointer
+ * @b: second int pointer
+ */
+void swap(int *a, int *b)
+{
+	int swap;
+
+	swap = *a;
+	*a = *b;
+	*b = swap;
 }
