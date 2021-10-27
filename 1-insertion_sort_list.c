@@ -5,36 +5,55 @@
 * 88 88 Y88 o.`Y8b 88""   88"Yb    88   88 Yb   dP 88 Y88
 * 88 88  Y8 8bodP' 888888 88  Yb   88   88  YbodP  88  Y8
 */
-
+void move_left(listint_t *curr, listint_t *insertion, listint_t **head);
 /**
  * insertion_sort_list - sort a doubly linked list of integer
  * in ascending order
  * @list: pointer to the head of the doubly linked list
  */
+
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *head, *insert;
+	listint_t *curr = NULL;
+	listint_t *insertion = NULL;
 
-	if (list == NULL || *list == NULL)
+	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
-	head = (*list)->next;
-	while (head != NULL)
+
+	curr = (*list)->next;
+	insertion = curr->prev;
+	while (curr != NULL)
 	{
-		insert = head->next;
-		while (head->prev != NULL && head->prev->n > head->n)
+		insertion = curr->prev;
+		while (insertion != NULL && insertion->n > curr->n)
 		{
-			head->prev->next = head->next;
-			if (head->next != NULL)
-				head->next->prev = head->prev;
-			head->next = head->prev;
-			head->prev = head->next->prev;
-			head->next->prev = head;
-			if (head->prev == NULL)
-				*list = head;
-			else
-				head->prev->next = head;
-			print_list(*list);
+			move_left(curr, insertion, list);
+			insertion = curr->prev;
 		}
-		head = insert;
+		curr = curr->next;
 	}
+}
+/**
+* move_left - swaps two members of a list
+*
+* @curr: current node to be moved at left of insertion pointer
+* @insertion: insertion pointer
+* @head: head of list
+*/
+void move_left(listint_t *curr, listint_t *insertion, listint_t **head)
+{
+	listint_t *swap1 = curr->next;
+	listint_t *swap2 = insertion->prev;
+
+	if (swap1 != NULL)
+		swap1->prev = insertion;
+	if (swap2 != NULL)
+		swap2->next = curr;
+	curr->prev = swap2;
+	insertion->next = swap1;
+	curr->next = insertion;
+	insertion->prev = curr;
+	if (*head == insertion)
+		*head = curr;
+	print_list(*head);
 }
