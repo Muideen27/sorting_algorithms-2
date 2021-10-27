@@ -1,34 +1,5 @@
 #include "sort.h"
 
-/* ################################################ */
-
-/*                         88            88         */
-/*                         ""            88         */
-/*                                       88         */
-/*  ,adPPYb,d8 88       88 88  ,adPPYba, 88   ,d8   */
-/* a8"    `Y88 88       88 88 a8"     "" 88 ,a8"    */
-/* 8b       88 88       88 88 8b         8888[      */
-/* "8a    ,d88 "8a,   ,a88 88 "8a,   ,aa 88`"Yba,   */
-/*  `"YbbdP'88  `"YbbdP'Y8 88  `"Ybbd8"' 88   `Y8a  */
-/*          88                                      */
-/*          88                                      */
-/*                                    ,d            */
-/*                                    88            */
-/* ,adPPYba,  ,adPPYba,  8b,dPPYba, MM88MMM         */
-/* I8[    "" a8"     "8a 88P'   "Y8   88            */
-/*  `"Y8ba,  8b       d8 88           88            */
-/* aa    ]8I "8a,   ,a8" 88           88,           */
-/* `"YbbdP"'  `"YbbdP"'  88           "Y888         */
-
-/* ################################################ */
-
-/* prototypes ##################################### */
-void sort(int *array,  long int low,  long int high,
-size_t size);
-long int partition(int *array,  long int low,
-long int high, size_t size);
-void swap(int *a, int *b);
-/* ################################################ */
 
 /**
  * quick_sort - sort an array of integers using quick_sort
@@ -36,93 +7,65 @@ void swap(int *a, int *b);
  * @array: array to sort
  * @size: the size of the array to sort
  */
-void quick_sort(int *array, size_t size)
+size_t partition(int *array, ssize_t min, ssize_t max, size_t size)
 {
-	if (!array || size < 2)
-		return;
-	sort(array, 0, size - 1, size);
-}
+	ssize_t i, j;
+	int swap, pivot;
 
-/**
- * sort - recursion to implement the quicksort (Lomuto version)
- *
- * @array: the array to sort
- * @low: where begins the partition
- * @high: where ends the partition
- * @size: the total size of array to be printed
- */
-void sort(int *array,  long int low,  long int high,
-size_t size)
-{
-	long int pivot = 0;
-
-	/* validate indices and if partition is greater than 1 */
-	if (low < high)
+	pivot = array[max];
+	i = min - 1;
+	for (j = min; j < max; j++)
 	{
-		/* partition and get pivot */
-		pivot = partition(array, low, high, size);
-	}
-	else
-		return;
-	/* recursion to sort the two partitions */
-	/* left partition */
-	sort(array, low, pivot - 1, size);
-	/* right parttion */
-	sort(array, pivot + 1, high, size);
-
-}
-/**
- * partition - partition elements in two
- * @array: the array to be partitioned
- * @low: where the partitions begin and is less than right
- * @high: where the partitions end
- * @size: total lenght of the array
- * Return: the pivot index of the partition
- */
-long int partition(int *array, long int low,
-long int high, size_t size)
-{
-	long int pivot = 0, i = 0, j = 0;
-
-	/* set pivot as last element */
-	pivot = high;
-
-	/* set the index */
-	i = low - 1; /* to allow increment */
-
-	for (j = low; j < high; j++)
-	{
-		if (*(array + j) < *(array + pivot))
+		if (array[j] < pivot)
 		{
 			i++;
 			if (i != j)
 			{
-				swap(&array[i], &array[j]);
+				swap = array[i];
+				array[i] = array[j];
+				array[j] = swap;
 				print_array(array, size);
-				printf("i:%ld-j:%ld\n", i, j);
 			}
 		}
 	}
-	if (*(array + high) < *(array + i + 1))
+	if (array[max] < array[i + 1])
 	{
-		swap(&array[high], &array[i + 1]);
+		swap = array[i + 1];
+		array[i + 1] = array[max];
+		array[max] = swap;
 		print_array(array, size);
-		printf("high:%ld, i+1:%ld\n", high, i + 1);
 	}
-
-	/* return new pivot pointer */
 	return (i + 1);
 }
 
 /**
- * swap - swap to integer's values
- *
- * @a: first integer
- * @b: second integer
- */
-void swap(int *a, int *b)
+* quicksort - sorts an array (a partition recursively)
+* @array: array to be sorted
+* @min: min index of the partition
+* @max: max index of the partition
+* @size: array size
+*/
+void quicksort(int *array, ssize_t min, ssize_t max, size_t size)
 {
-	int tmp = *a;
-	*a = *b;
-	*b = tmp;
+	ssize_t pivot;
+
+	if (min < max)
+	{
+		pivot = partition(array, min, max, size);
+		quicksort(array, min, pivot - 1, size);
+		quicksort(array, pivot + 1, max, size);
+
+	}
+}
+
+/**
+* quick_sort - sorts an array with quick sort algo
+* @array: The array to be sorted
+* @size: The size of the array to be sorted
+*/
+void quick_sort(int *array, size_t size)
+{
+	if (array == NULL || size < 2)
+		return;
+	quicksort(array, 0, size - 1, size);
 }

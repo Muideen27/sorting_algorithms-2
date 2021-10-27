@@ -36,7 +36,7 @@ void insertion_sort_list(listint_t **list)
 /**
 * move_left - swaps two members of a list
 *
-* @curr: current node to be moved at left of insertion pointer
+* @curr: current node to be moved at left of insertion
 * @insertion: insertion pointer
 * @head: head of list
 */
@@ -57,3 +57,4 @@ void move_left(listint_t *curr, listint_t *insertion, listint_t **head)
 		*head = curr;
 	print_list(*head);
 }
+
