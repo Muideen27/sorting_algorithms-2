@@ -12,3 +12,4 @@ gcc -Wall -Wextra -Werror -pedantic 105-main.c 105-radix_sort.c print_array.c -o
 gcc -Wall -Wextra -Werror -pedantic 106-main.c 106-bitonic_sort.c print_array.c -o bitonic
 gcc -Wall -Wextra -Werror -pedantic 107-main.c 107-quick_sort_hoare.c print_array.c -o quick
 gcc -Wall -Wextra -Werror -pedantic 1000-main.c 1000-sort_deck.c -o deck
+echo "Compilation process finish successfully"
