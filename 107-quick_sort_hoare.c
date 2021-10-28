@@ -2,7 +2,7 @@
 /**
 * partition - quicksort using Hoare version
 * @array: array to sort
-* @min: lowest index 
+* @min: lowest index
 * @max: highest index
 * @size: size of the array
 *

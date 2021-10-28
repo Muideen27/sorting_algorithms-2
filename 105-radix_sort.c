@@ -2,6 +2,7 @@
 /**
 * pow_10 - calculates a positive power of 10
 * @power: power of 10 to calculate
+* Return: final result
 */
 unsigned int pow_10(unsigned int power)
 {

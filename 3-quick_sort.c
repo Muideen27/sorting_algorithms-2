@@ -2,10 +2,13 @@
 
 
 /**
- * quick_sort - sort an array of integers using quick_sort
+ * partition - sort an array of integers using quick_sort
  *		lomuto implementation with pivot in last element of partition
  * @array: array to sort
+ * @min: minimum value
+ * @max: max value
  * @size: the size of the array to sort
+ * Return: index + 1
  */
 size_t partition(int *array, ssize_t min, ssize_t max, size_t size)
 {
