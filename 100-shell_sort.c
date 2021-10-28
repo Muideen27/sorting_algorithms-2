@@ -3,7 +3,7 @@
 void insertion_sort(int *, long int, long int, size_t);
 
 /**
-* shell_sort - shell sort
+* shell_sort - shell sort algorithm
 *
 * @array: array to sort
 * @size: size of array
