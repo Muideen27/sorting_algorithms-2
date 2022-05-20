@@ -1,13 +1,13 @@
 # 0x1B. C - Sorting algorithms & Big O
 
 ```
-oooooooooo.  ooooo   .oooooo.         .oooooo.   
-`888'   `Y8b `888'  d8P'  `Y8b       d8P'  `Y8b  
- 888     888  888  888              888      888 
- 888oooo888'  888  888              888      888 
- 888    `88b  888  888     ooooo    888      888 
- 888    .88P  888  `88.    .88'     `88b    d88' 
-o888bood8P'  o888o  `Y8bood8P'       `Y8bood8P'  
+oooooooooo.  ooooo   .oooooo.         .oooooo.
+`888'   `Y8b `888'  d8P'  `Y8b       d8P'  `Y8b
+ 888     888  888  888              888      888
+ 888oooo888'  888  888              888      888
+ 888    `88b  888  888     ooooo    888      888
+ 888    .88P  888  `88.    .88'     `88b    d88'
+o888bood8P'  o888o  `Y8bood8P'       `Y8bood8P'
 ```
 
 ## Learning Objectives
@@ -76,7 +76,7 @@ Ronald Rivero
 <div>
 <a href="https://twitter.com/ralex_uy" target="_blank">  <img align="left" alt="Ronald Rivero | Twitter" src="https://img.shields.io/twitter/follow/ralex_uy?style=social"/> </a>
 
-<a href="https://www.linkedin.com/in/ronald-rivero/" target="_blank">  <img align="left" alt="Ronald Rivero | LinkedIn" src="https://img.shields.io/badge/LinkedIn-+19K-blue?style=social&logo=linkedin"/> </a>
+<a href="https://www.linkedin.com/in/ronald-rivero/" target="_blank">  <img align="left" alt="Ronald Rivero | LinkedIn" src="https://img.shields.io/badge/LinkedIn-+24K-blue?style=social&logo=linkedin"/> </a>
 
 <a href="https://github.com/ralexrivero/" target="_blank">  <img align="left" src="https://img.shields.io/github/followers/ralexrivero?style=social" alt="Ralex | Github"> </a>
 </br>
